@@ -1,0 +1,37 @@
+{% extends "mainfiles/index.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row account-row g-0  mb-5" style="height:500px; margin-top: 20px; background-color: cadetblue;">
+        <div class="col-md-6 col-sm-12">
+            <div class="img-fluid">
+                <img src="{%static 'staticfiles/img/registerimg.jpg' %}" style="height:500px; width:100%;" alt="">
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12 form-row "style="padding-left:30px; padding-top:40px;">
+                    <form class="myform" action="" method="POST" style="width:400px; text-align: center; margin-top: 25px; " >
+                        {% csrf_token %}
+                        {% for mes in messages %}
+                        <h4>{{mes}}</h4>
+                        {% endfor %}
+                        <h1 class="formtext">RegisteR</h1>
+                       <div class="mb-3">
+                            <input type="text" name ="user_name" class="form-control" id="user_name" placeholder="username" aria-describedby="username">  
+                          </div>
+                          <div class="mb-3">
+                            <input type="email" name ="email" class="form-control" id="user_email" placeholder="email" aria-describedby="email">  
+                          </div>
+                          <div class="mb-3">
+                            <input type="password" name ="pass1" class="form-control" id="user_password" placeholder="password" aria-describedby="password">  
+                          </div>
+                          <div class="mb-4">
+                            <input type="password" name ="pass2" class="form-control" id="user_con_password" placeholder="confirm-password" aria-describedby="con-password">  
+                          </div>
+                            <button class="btn btn-primary acbtn">Registere</button>
+                            <p class="mt-3">All Ready A Memebr:<span>Login</span></p>
+                        </div>
+                    </form>  
+        </div>
+    </div>
+</div>
+{% endblock %}

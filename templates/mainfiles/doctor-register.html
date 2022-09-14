@@ -1,0 +1,43 @@
+{% extends "mainfiles/index.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row doc-row g-0">
+            <div class="col-6">
+                   <img src="{%static 'staticfiles/img/doctors-4.jpg'%}"  class="doc-img" alt="">
+            </div>
+            <div class="col-6 mb-4">
+                <form class="doc-form" method="POST">
+                  {% csrf_token %}
+                    <h3 class="mt-3">ADD DOCTOR</h3>
+                    <div class="form-outline mb-4">
+                      <input type="name" name="name" id="name"  placeholder="Doctor Name" class="form-control" /> 
+                    </div>
+                    <div class="form-outline mb-4">
+                      <input type="number"  name="age" id="age"  placeholder="Age" class="form-control" />
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="name"  name="Designation" id="Designation" placeholder="Designation " class="form-control" />
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="name"  name="specility" id="speciality"  placeholder="speciality " class="form-control" />
+                      </div>
+                  
+                      <div class="form-outline mb-4">
+                        <input type="number" name="Experinces" id="Experinces"  placeholder="Experinces " class="form-control" />
+                      </div>
+                  
+                      <div class="form-outline mb-4">
+                        <input type="number" name="phone" id="phone" placeholder="Phone" class="form-control" />
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <input type="text" id="form2Example2" name="address" id="address"  placeholder="address" class="form-control" />
+                      </div>
+                      <button type="submit" class="btn btn-primary btn-block mb-4">Add Doctor</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

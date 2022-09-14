@@ -1,0 +1,43 @@
+{% extends "mainfiles/index.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid  main-content ">
+  <h2 style="color: whitesmoke; text-align: center; position:relative; top: 100px;"><u>HOSPTIAL MANAGEMENT</u></h2>
+    <div class="rwo  home-row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                  {% if objects_list_doctor %}
+                  <h5 class="card-title"><span class="badge bg-danger ms-2">{{objects_list_doctor|length}}</span></h5>
+                  {% endif %}
+                  <a href="" class="card-text">DOCTOR</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                      {% if objects_list_patient %}
+                      <h5 class="card-title"><span class="badge bg-danger ms-2">{{objects_list_patient|length}}</span></h5>
+                      {% endif %}
+                      <a href=""class="card-text">PATIENT</a>
+                    </div>
+                  </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                  {% if objects_list_apponitement %}
+                  <h5 class="card-title"><span class="badge bg-danger ms-2">{{objects_list_apponitement|length}}</span></h5>
+                  {% endif %}
+                  <a href="" class="card-text">APPOINTEMENT</a>
+                </div>
+              </div>
+            
+        </div>
+
+
+    </div>
+</div>
+{% endblock %}
